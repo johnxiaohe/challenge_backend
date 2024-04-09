@@ -2,7 +2,10 @@
   "canisters": {
     "challenge_backend": {
       "main": "src/challenge_backend/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "dependencies": [
+        "cycle-ledger","icp-ledger"
+      ]
     },
     "challenge_frontend": {
       "dependencies": [
@@ -16,6 +19,16 @@
         "dist/challenge_frontend/"
       ],
       "type": "assets"
+    },
+    "cycle-ledger": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/ff10ea1dba07c0f66c66536a46a97146cf260e90/rs/rosetta-api/icp_ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/ff10ea1dba07c0f66c66536a46a97146cf260e90/canisters/ledger-canister.wasm.gz"
+    },
+    "icp-ledger": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/ff10ea1dba07c0f66c66536a46a97146cf260e90/rs/rosetta-api/icp_ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/ff10ea1dba07c0f66c66536a46a97146cf260e90/canisters/ledger-canister.wasm.gz"
     }
   },
   "defaults": {
